@@ -5,7 +5,7 @@ docker rm rplots
 
 docker run -P -d \
            --name rplots \
-           -v /Users/bastian/Documents/rails/snpr/public/data/plot_data:/plot_data/ \
+           -v $1:/plot_data/ \
            -w /home/plots/ \
            growthplots
 
