@@ -3,10 +3,7 @@
 docker stop rplots
 docker rm rplots
 
-docker run -P -d \
-           --name rplots \
+docker run --name rplots \
            -v $1:/plot_data/ \
-           -w /home/plots/ \
+           -w /home/ \
            growthplots
-
-docker exec rplots Rscript createPlots.R /plot_data/
