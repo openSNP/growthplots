@@ -78,6 +78,7 @@ geno_user_merge_long <- melt(geno_user_merge, id.vars="date",variable.name="cate
 
 # plot graphs
 ggplot(geno_user_merge_long,aes(date,value,color=category)) +
+  geom_point() +
   geom_smooth() +
   scale_color_discrete("Category") +
   scale_x_datetime("Date") +
