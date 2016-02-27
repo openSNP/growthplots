@@ -14,13 +14,13 @@ user_phenotype_file = paste(base_dir,"number_user_phenotypes.csv", sep = "/")
 
 # read all files in & fix date format
 genotype <- read.csv(file=genotype_file,sep="\t",head=F)
-genotype$date <- as.POSIXct(as.character(genotype$V2),format="%d.%m.%Y %H:%M")
+genotype$date <- as.POSIXct(as.character(genotype$V2),format="%d.%m.%Y")
 user <- read.csv(file=user_file,sep="\t",head=F)
-user$date <- as.POSIXct(as.character(user$V2),format="%d.%m.%Y %H:%M")
+user$date <- as.POSIXct(as.character(user$V2),format="%d.%m.%Y")
 phenotype <- read.csv(file=phenotype_file,sep="\t",head=F)
-phenotype$date <- as.POSIXct(as.character(phenotype$V2),format="%d.%m.%Y %H:%M")
+phenotype$date <- as.POSIXct(as.character(phenotype$V2),format="%d.%m.%Y")
 user_phenotype <- read.csv(file=user_phenotype_file,sep="\t",head=F)
-user_phenotype$date <- as.POSIXct(as.character(user_phenotype$V2),format="%d.%m.%Y %H:%M")
+user_phenotype$date <- as.POSIXct(as.character(user_phenotype$V2),format="%d.%m.%Y")
 
 # do single plots for each
 # genotype
@@ -109,3 +109,4 @@ ggplot(pheno_userpheno_merge_long,aes(date,value,color=category)) +
   scale_y_continuous("total #") +
   theme_minimal()
 ggsave(paste(base_dir,"pheno_plus_userpheno.png",sep="/"),width=4, height=3, dpi=100)
+
