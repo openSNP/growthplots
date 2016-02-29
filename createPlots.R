@@ -25,7 +25,6 @@ user_phenotype$date <- as.POSIXct(as.character(user_phenotype$V2),format="%d.%m.
 # do single plots for each
 # genotype
 ggplot(genotype,aes(date,V1)) +
-  geom_point()  +
   geom_smooth() +
   theme_light() +
   scale_x_datetime("Date") +
@@ -34,7 +33,6 @@ ggsave(paste(base_dir,"genotypes.png",sep="/"),width=4, height=3, dpi=100)
 
 # users
 ggplot(user,aes(date,V1)) +
-  geom_point()  +
   geom_smooth() +
   theme_light() +
   scale_x_datetime("Date") +
@@ -43,7 +41,6 @@ ggsave(paste(base_dir,"users.png",sep="/"),width=4, height=3, dpi=100)
 
 # users
 ggplot(phenotype,aes(date,V1)) +
-  geom_point()  +
   geom_smooth() +
   theme_light() +
   scale_x_datetime("Date") +
@@ -52,7 +49,6 @@ ggsave(paste(base_dir,"phenotypes.png",sep="/"),width=4, height=3, dpi=100)
 
 # user phenotypes
 ggplot(user_phenotype,aes(date,V1)) +
-  geom_point()  +
   geom_smooth() +
   theme_light() +
   scale_x_datetime("Date") +
@@ -78,7 +74,6 @@ geno_user_merge_long <- melt(geno_user_merge, id.vars="date",variable.name="cate
 
 # plot graphs
 ggplot(geno_user_merge_long,aes(date,value,color=category)) +
-  geom_point() +
   geom_smooth() +
   scale_color_discrete("Category") +
   scale_x_datetime("Date") +
@@ -109,4 +104,3 @@ ggplot(pheno_userpheno_merge_long,aes(date,value,color=category)) +
   scale_y_continuous("total #") +
   theme_minimal()
 ggsave(paste(base_dir,"pheno_plus_userpheno.png",sep="/"),width=4, height=3, dpi=100)
-
