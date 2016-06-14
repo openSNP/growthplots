@@ -79,7 +79,7 @@ ggplot(geno_user_merge_long,aes(date,value,color=category)) +
   scale_x_datetime("Date") +
   scale_y_continuous("total #") +
   theme_minimal()
-ggsave(paste(base_dir,"geno_plus_phenotypes.png",sep="/"),width=4, height=3, dpi=100)
+ggsave(paste(base_dir,"geno_plus_users.png",sep="/"),width=4, height=3, dpi=100)
 
 # now we do phenotypes & user phenotypes
 # nicer column labels
